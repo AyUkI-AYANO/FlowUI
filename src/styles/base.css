@@ -53,6 +53,21 @@ body {
 }
 
 .hero p {
-  margin: 10px 0 0;
+  margin: 10px 0 12px;
   color: var(--text-subtle);
+}
+
+.demo-trigger {
+  border: 1px solid rgba(102, 232, 255, 0.35);
+  background: linear-gradient(120deg, rgba(102, 232, 255, 0.18), rgba(158, 140, 255, 0.2));
+  color: var(--text-main);
+  border-radius: 999px;
+  padding: 9px 16px;
+  cursor: pointer;
+  transition: transform 260ms var(--ease-fluid), box-shadow 260ms var(--ease-fluid);
+}
+
+.demo-trigger:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(102, 232, 255, 0.24);
 }
