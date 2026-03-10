@@ -6,6 +6,8 @@ import { initSlider } from './components/slider.js';
 import { initSelectionPanel } from './components/selection-panel.js';
 import { initChipFilter } from './components/chip-filter.js';
 import { initAccordion } from './components/accordion.js';
+import { initActionToolbar } from './components/action-toolbar.js';
+import { initModuleTabs } from './components/module-tabs.js';
 
 const windowEl = document.querySelector('[data-component="window"]');
 const horizontalMenuEl = document.querySelector('[data-component="horizontal-menu"]');
@@ -16,7 +18,14 @@ const sliderOutEl = document.querySelector('#glow-value');
 const selectionPanelEl = document.querySelector('[data-component="selection-panel"]');
 const chipFilterEl = document.querySelector('[data-component="chip-filter"]');
 const accordionEl = document.querySelector('[data-component="accordion"]');
+const actionToolbarEl = document.querySelector('[data-component="action-toolbar"]');
+const moduleTabsEl = document.querySelector('[data-component="module-tabs"]');
+const interactionLogEl = document.querySelector('#interaction-log');
 const playDemoBtn = document.querySelector('#play-demo');
+
+const setLog = (text) => {
+  if (interactionLogEl) interactionLogEl.textContent = text;
+};
 
 if (windowEl) initWindow(windowEl);
 if (horizontalMenuEl) initHorizontalMenu(horizontalMenuEl);
@@ -26,6 +35,8 @@ if (sliderEl && sliderOutEl) initSlider(sliderEl, sliderOutEl);
 if (selectionPanelEl) initSelectionPanel(selectionPanelEl);
 if (chipFilterEl) initChipFilter(chipFilterEl);
 if (accordionEl) initAccordion(accordionEl);
+if (actionToolbarEl) initActionToolbar(actionToolbarEl, setLog);
+if (moduleTabsEl) initModuleTabs(moduleTabsEl, setLog);
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -52,6 +63,8 @@ async function animateSlider(slider, toValue, duration = 520) {
 }
 
 async function playInteractionDemo() {
+  setLog('开始自动演示：将依次触发全部模块按钮。');
+
   const clickAndWait = async (element, wait = 280) => {
     element?.click();
     await delay(wait);
@@ -63,13 +76,18 @@ async function playInteractionDemo() {
   const segments = segmentSwitchEl ? Array.from(segmentSwitchEl.querySelectorAll('.segment')) : [];
   const chips = chipFilterEl ? Array.from(chipFilterEl.querySelectorAll('.chip')) : [];
   const accordionTriggers = accordionEl ? Array.from(accordionEl.querySelectorAll('.accordion-trigger')) : [];
+  const actionButtons = actionToolbarEl ? Array.from(actionToolbarEl.querySelectorAll('.action-btn')) : [];
+  const moduleButtons = moduleTabsEl ? Array.from(moduleTabsEl.querySelectorAll('.module-tab')) : [];
 
-  for (const index of [1, 2, 0]) await clickAndWait(topItems[index]);
-  for (const index of [2, 3, 1]) await clickAndWait(sideItems[index]);
-  for (const index of [1, 3, 0]) await clickAndWait(cards[index]);
-  for (const index of [1, 0]) await clickAndWait(segments[index]);
-  for (const index of [2, 3, 0]) await clickAndWait(chips[index]);
-  for (const index of [1, 0]) await clickAndWait(accordionTriggers[index], 380);
+  for (const item of topItems) await clickAndWait(item, 320);
+  for (const item of sideItems) await clickAndWait(item);
+  for (const item of cards) await clickAndWait(item);
+  for (const item of segments) await clickAndWait(item, 340);
+  for (const item of chips) await clickAndWait(item);
+  for (const item of accordionTriggers) await clickAndWait(item, 380);
+  for (const item of accordionTriggers.slice().reverse()) await clickAndWait(item, 380);
+  for (const item of actionButtons) await clickAndWait(item);
+  for (const item of moduleButtons) await clickAndWait(item);
 
   if (sliderEl) {
     await animateSlider(sliderEl, 88);
@@ -78,6 +96,8 @@ async function playInteractionDemo() {
     await delay(180);
     await animateSlider(sliderEl, 62);
   }
+
+  setLog('自动演示完成：所有按钮均已触发，可继续手动操作。');
 }
 
 playDemoBtn?.addEventListener('click', () => {

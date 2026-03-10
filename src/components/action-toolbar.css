@@ -1,0 +1,23 @@
+.action-toolbar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.action-btn {
+  border: 1px solid rgba(102, 232, 255, 0.3);
+  background: linear-gradient(160deg, rgba(14, 26, 48, 0.72), rgba(9, 16, 31, 0.6));
+  color: var(--text-subtle);
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: transform 260ms var(--ease-fluid), border-color 260ms var(--ease-fluid), box-shadow 260ms var(--ease-fluid), color 260ms var(--ease-fluid);
+}
+
+.action-btn:hover,
+.action-btn.active {
+  color: #fff;
+  transform: translateY(-1px);
+  border-color: rgba(118, 255, 200, 0.55);
+  box-shadow: 0 8px 20px rgba(102, 232, 255, 0.24);
+}
