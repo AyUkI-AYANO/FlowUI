@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aurora Flow UI Demo</title>
+    <link rel="stylesheet" href="./src/styles/tokens.css" />
+    <link rel="stylesheet" href="./src/styles/base.css" />
+    <link rel="stylesheet" href="./src/components/window.css" />
+    <link rel="stylesheet" href="./src/components/close-button.css" />
+    <link rel="stylesheet" href="./src/components/segment-switch.css" />
+    <link rel="stylesheet" href="./src/components/slider.css" />
+    <link rel="stylesheet" href="./src/components/horizontal-menu.css" />
+    <link rel="stylesheet" href="./src/components/vertical-menu.css" />
+    <link rel="stylesheet" href="./src/components/selection-panel.css" />
+    <link rel="stylesheet" href="./src/components/partition-window.css" />
+  </head>
+  <body>
+    <div class="aurora-background"></div>
+    <main class="demo-layout">
+      <header class="hero">
+        <h1>Aurora Flow UI</h1>
+        <p>流畅 · 抽象 · 极光灵感 · 轻依赖（原生 HTML/CSS/JS）</p>
+      </header>
+
+      <section class="ui-window" data-component="window">
+        <div class="window-header">
+          <h2>主窗口 · 控制台</h2>
+          <button class="close-button" data-component="close-button" aria-label="关闭窗口"></button>
+        </div>
+
+        <nav class="horizontal-menu" data-component="horizontal-menu">
+          <button class="menu-item active" data-view="dashboard">总览</button>
+          <button class="menu-item" data-view="motion">动态</button>
+          <button class="menu-item" data-view="palette">配色</button>
+          <span class="menu-indicator"></span>
+        </nav>
+
+        <div class="window-content">
+          <aside class="vertical-menu" data-component="vertical-menu">
+            <button class="v-item active">工作区</button>
+            <button class="v-item">素材库</button>
+            <button class="v-item">节点</button>
+            <button class="v-item">效果器</button>
+            <button class="v-item">导出</button>
+          </aside>
+
+          <section class="content-stack">
+            <div class="partition-window" data-component="partition-window">
+              <div class="partition left-pane">
+                <h3>选择界面</h3>
+                <div class="selection-panel" data-component="selection-panel">
+                  <button class="select-card selected">Aurora Mist</button>
+                  <button class="select-card">Solar Veil</button>
+                  <button class="select-card">Frost Pulse</button>
+                  <button class="select-card">Neon Drift</button>
+                </div>
+              </div>
+
+              <div class="partition divider" aria-hidden="true"></div>
+
+              <div class="partition right-pane">
+                <h3>交互组件</h3>
+                <div class="control-row">
+                  <label for="mode-switch">两段式开关</label>
+                  <div id="mode-switch" class="segment-switch" data-component="segment-switch" role="tablist">
+                    <button class="segment active" data-mode="soft">柔和</button>
+                    <button class="segment" data-mode="intense">强烈</button>
+                    <span class="segment-thumb"></span>
+                  </div>
+                </div>
+
+                <div class="control-row">
+                  <label for="glow-slider">滑条（极光强度）</label>
+                  <input id="glow-slider" class="aurora-slider" data-component="slider" type="range" min="0" max="100" value="62" />
+                  <output id="glow-value">62%</output>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/demo.js"></script>
+  </body>
+</html>

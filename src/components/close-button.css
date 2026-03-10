@@ -1,0 +1,30 @@
+.close-button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 145, 216, 0.5);
+  background: radial-gradient(circle at 35% 35%, rgba(255, 145, 216, 0.34), rgba(80, 16, 56, 0.7));
+  cursor: pointer;
+  position: relative;
+  transition: transform 260ms var(--ease-fluid), box-shadow 260ms var(--ease-fluid);
+}
+
+.close-button::before,
+.close-button::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 2px;
+  border-radius: 99px;
+  background: #ffe6f6;
+}
+
+.close-button::before { transform: translate(-50%, -50%) rotate(45deg); }
+.close-button::after { transform: translate(-50%, -50%) rotate(-45deg); }
+
+.close-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 22px rgba(255, 145, 216, 0.45);
+}

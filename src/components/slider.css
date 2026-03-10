@@ -1,0 +1,27 @@
+.aurora-slider {
+  appearance: none;
+  width: min(320px, 100%);
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--aurora-mint), var(--aurora-cyan) 35%, var(--aurora-violet));
+  outline: none;
+}
+
+.aurora-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #effbff;
+  border: 2px solid rgba(102, 232, 255, 0.9);
+  box-shadow: 0 0 20px rgba(102, 232, 255, 0.7);
+}
+
+.aurora-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #effbff;
+  border: 2px solid rgba(102, 232, 255, 0.9);
+  box-shadow: 0 0 20px rgba(102, 232, 255, 0.7);
+}

@@ -1,0 +1,21 @@
+:root {
+  --bg-0: #070910;
+  --bg-1: #0c1324;
+  --glass: rgba(17, 28, 51, 0.52);
+  --glass-strong: rgba(12, 18, 34, 0.72);
+  --line: rgba(167, 220, 255, 0.28);
+  --text-main: #ecf8ff;
+  --text-subtle: #a4b7d6;
+
+  --aurora-cyan: #66e8ff;
+  --aurora-violet: #9e8cff;
+  --aurora-mint: #76ffc8;
+  --aurora-pink: #ff91d8;
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+
+  --ease-fluid: cubic-bezier(0.22, 1, 0.36, 1);
+  --shadow-soft: 0 12px 45px rgba(12, 22, 41, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}

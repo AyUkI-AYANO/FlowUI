@@ -1,0 +1,27 @@
+.vertical-menu {
+  background: var(--glass);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 10px;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.v-item {
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.01);
+  color: var(--text-subtle);
+  text-align: left;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: all 280ms var(--ease-fluid);
+}
+
+.v-item.active,
+.v-item:hover {
+  color: #fff;
+  border-color: rgba(118, 255, 200, 0.35);
+  background: linear-gradient(120deg, rgba(118, 255, 200, 0.18), rgba(102, 232, 255, 0.14));
+}
