@@ -1,0 +1,23 @@
+.chip-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  border: 1px solid rgba(158, 140, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(14, 24, 45, 0.75);
+  color: var(--text-subtle);
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: transform 260ms var(--ease-fluid), border-color 260ms var(--ease-fluid), color 260ms var(--ease-fluid), box-shadow 260ms var(--ease-fluid);
+}
+
+.chip:hover,
+.chip.active {
+  transform: translateY(-1px);
+  color: #fff;
+  border-color: rgba(102, 232, 255, 0.55);
+  box-shadow: 0 6px 18px rgba(102, 232, 255, 0.26);
+}

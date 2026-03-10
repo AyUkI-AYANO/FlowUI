@@ -14,13 +14,16 @@
     <link rel="stylesheet" href="./src/components/vertical-menu.css" />
     <link rel="stylesheet" href="./src/components/selection-panel.css" />
     <link rel="stylesheet" href="./src/components/partition-window.css" />
+    <link rel="stylesheet" href="./src/components/chip-filter.css" />
+    <link rel="stylesheet" href="./src/components/accordion.css" />
   </head>
   <body>
     <div class="aurora-background"></div>
     <main class="demo-layout">
       <header class="hero">
-        <h1>Aurora Flow UI</h1>
+        <h1>Aurora Flow UI · X1</h1>
         <p>流畅 · 抽象 · 极光灵感 · 轻依赖（原生 HTML/CSS/JS）</p>
+        <button id="play-demo" class="demo-trigger">播放交互动画演示</button>
       </header>
 
       <section class="ui-window" data-component="window">
@@ -74,6 +77,30 @@
                   <label for="glow-slider">滑条（极光强度）</label>
                   <input id="glow-slider" class="aurora-slider" data-component="slider" type="range" min="0" max="100" value="62" />
                   <output id="glow-value">62%</output>
+                </div>
+
+                <div class="control-row">
+                  <label>风格过滤器（新）</label>
+                  <div class="chip-filter" data-component="chip-filter">
+                    <button class="chip active">柔光</button>
+                    <button class="chip">锐光</button>
+                    <button class="chip">霓虹</button>
+                    <button class="chip">薄雾</button>
+                  </div>
+                </div>
+
+                <div class="control-row">
+                  <label>信息折叠面板（新）</label>
+                  <div class="accordion" data-component="accordion">
+                    <div class="accordion-item open">
+                      <button class="accordion-trigger">动效参数</button>
+                      <div class="accordion-panel">缓动：ease-fluid · 持续：420ms · 强度映射：Glow × 0.62</div>
+                    </div>
+                    <div class="accordion-item">
+                      <button class="accordion-trigger">色彩策略</button>
+                      <div class="accordion-panel">主色：Cyan/Violet · 辅助：Mint/Pink · 对比度策略：高亮焦点 + 深色底。</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
