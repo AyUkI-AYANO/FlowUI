@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aurora Flow UI Demo X2.5</title>
+    <title>Aurora Flow UI Demo X3</title>
     <script>
       if (location.protocol === 'file:') {
         const fallbackUrl = 'http://localhost:4173';
         document.addEventListener('DOMContentLoaded', () => {
           document.body.innerHTML = `
             <main style="font-family: Inter, 'Noto Sans SC', sans-serif; margin: 10vh auto; max-width: 720px; line-height: 1.7; color: #e9f0ff; background: #070c20; border: 1px solid rgba(102, 232, 255, 0.3); border-radius: 18px; padding: 28px 30px; box-shadow: 0 18px 48px rgba(0, 0, 0, 0.5);">
-              <h1 style="margin-top:0;">Aurora Flow UI · X2.5</h1>
+              <h1 style="margin-top:0;">Aurora Flow UI · X3</h1>
               <p>当前以 <code>file://</code> 方式打开，ES Module 脚本会被浏览器拦截，导致按钮交互全部失效。</p>
               <p>请先启动本地服务，再访问：<a href="${fallbackUrl}" style="color:#66e8ff;">${fallbackUrl}</a></p>
               <pre style="background:#0f1740; color:#b7f6ff; padding:12px 14px; border-radius:12px; overflow:auto;">node scripts/serve-localhost.mjs --port 4173</pre>
@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="./src/styles/tokens.css" />
     <link rel="stylesheet" href="./src/styles/base.css" />
     <link rel="stylesheet" href="./src/components/window.css" />
-    <link rel="stylesheet" href="./src/components/close-button.css" />
+    <link rel="stylesheet" href="./src/components/window-controls.css" />
     <link rel="stylesheet" href="./src/components/segment-switch.css" />
     <link rel="stylesheet" href="./src/components/slider.css" />
     <link rel="stylesheet" href="./src/components/horizontal-menu.css" />
@@ -39,7 +39,7 @@
     <div class="aurora-background"></div>
     <main class="demo-layout">
       <header class="hero">
-        <h1>Aurora Flow UI · X2.5</h1>
+        <h1>Aurora Flow UI · X3</h1>
         <p>流畅 · 抽象 · 极光灵感 · 轻依赖（原生 HTML/CSS/JS）</p>
         <button id="play-demo" class="demo-trigger">播放交互动画演示</button>
       </header>
@@ -47,7 +47,11 @@
       <section class="ui-window" data-component="window">
         <div class="window-header">
           <h2>主窗口 · 控制台</h2>
-          <button class="close-button" data-component="close-button" aria-label="关闭窗口"></button>
+          <div class="window-controls">
+            <button class="window-control-btn minimize" data-component="minimize-button" aria-label="最小化窗口"></button>
+            <button class="window-control-btn resize" data-component="resize-button" aria-label="缩放窗口"></button>
+            <button class="window-control-btn close" data-component="close-button" aria-label="关闭窗口"></button>
+          </div>
         </div>
 
         <nav class="horizontal-menu" data-component="horizontal-menu">
