@@ -17,6 +17,7 @@
 - 动作工具条（X2 新增）：`src/components/action-toolbar.css` + `src/components/action-toolbar.js`
 - 模块切换器（X2 新增）：`src/components/module-tabs.css` + `src/components/module-tabs.js`
 - Aeroglass 视觉开关与演示集成（X4）：`src/demo.js` + `src/styles/tokens.css` + `src/styles/base.css`
+- 选项面板 Aeroglass 重设计（X4.5）：`src/components/selection-panel.css` + `src/components/chip-filter.css` + `src/components/module-tabs.css`
 
 ## 演示
 
@@ -64,4 +65,9 @@
 - 新增 Aeroglass（毛玻璃 + 液态玻璃）设计语言令牌与样式，并支持对窗口、菜单栏、选项面板进行可开关启用。
 - 演示页新增 Aeroglass 开关区域，自动演示流程会触发该开关并展示开关前后效果。
 
+### X4.5
+
+- 重新设计所有“选项面板”类组件（选择卡片、风格过滤器、模块切换器）的 Aeroglass 效果，降低发灰感并增强玻璃层次。
+- 为选项面板统一补充更明显的圆角边框系统，外层容器与内层按钮在半径与描边上保持一致。
+- 调整激活态与悬停态的高光、阴影与渐变配方，使选中状态对比更清晰，视觉更稳定。
 

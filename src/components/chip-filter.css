@@ -1,35 +1,42 @@
 .chip-filter {
+  --chip-radius: 16px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  padding: 4px;
+  border-radius: calc(var(--chip-radius) + 4px);
 }
 
 .chip {
-  border: 1px solid rgba(158, 140, 255, 0.35);
-  border-radius: 999px;
-  background: rgba(14, 24, 45, 0.75);
+  border: 1px solid rgba(166, 188, 255, 0.34);
+  border-radius: var(--chip-radius);
+  background: linear-gradient(145deg, rgba(17, 33, 60, 0.84), rgba(12, 22, 44, 0.72));
   color: var(--text-subtle);
-  padding: 7px 14px;
+  padding: 8px 16px;
   cursor: pointer;
-  transition: transform 260ms var(--ease-fluid), border-color 260ms var(--ease-fluid), color 260ms var(--ease-fluid), box-shadow 260ms var(--ease-fluid);
+  transition: transform 260ms var(--ease-fluid), border-color 260ms var(--ease-fluid), color 260ms var(--ease-fluid), box-shadow 260ms var(--ease-fluid), background 260ms var(--ease-fluid);
 }
 
 .chip:hover,
 .chip.active {
   transform: translateY(-1px);
   color: #fff;
-  border-color: rgba(102, 232, 255, 0.55);
-  box-shadow: 0 6px 18px rgba(102, 232, 255, 0.26);
+  border-color: rgba(132, 228, 255, 0.56);
+  background: linear-gradient(140deg, rgba(52, 90, 148, 0.72), rgba(67, 74, 148, 0.66));
+  box-shadow: 0 7px 18px rgba(96, 188, 255, 0.24);
 }
 
 .chip-filter.aeroglass-enabled .chip {
-  background: linear-gradient(145deg, rgba(24, 48, 82, 0.35), rgba(14, 32, 64, 0.26));
-  border-color: rgba(206, 237, 255, 0.32);
-  backdrop-filter: blur(10px) saturate(128%);
-  -webkit-backdrop-filter: blur(10px) saturate(128%);
+  border-color: rgba(208, 233, 255, 0.4);
+  background:
+    linear-gradient(150deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.04) 45%),
+    linear-gradient(145deg, rgba(24, 50, 86, 0.42), rgba(15, 36, 72, 0.25));
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
 }
 
 .chip-filter.aeroglass-enabled .chip:hover,
 .chip-filter.aeroglass-enabled .chip.active {
-  box-shadow: 0 9px 20px rgba(102, 232, 255, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: rgba(184, 240, 255, 0.82);
+  box-shadow: 0 10px 22px rgba(102, 216, 255, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.48);
 }

@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aurora Flow UI Demo X4</title>
+    <title>Aurora Flow UI Demo X4.5</title>
     <script>
       if (location.protocol === 'file:') {
         const fallbackUrl = 'http://localhost:4173';
         document.addEventListener('DOMContentLoaded', () => {
           document.body.innerHTML = `
             <main style="font-family: Inter, 'Noto Sans SC', sans-serif; margin: 10vh auto; max-width: 720px; line-height: 1.7; color: #e9f0ff; background: #070c20; border: 1px solid rgba(102, 232, 255, 0.3); border-radius: 18px; padding: 28px 30px; box-shadow: 0 18px 48px rgba(0, 0, 0, 0.5);">
-              <h1 style="margin-top:0;">Aurora Flow UI · X4</h1>
+              <h1 style="margin-top:0;">Aurora Flow UI · X4.5</h1>
               <p>当前以 <code>file://</code> 方式打开，ES Module 脚本会被浏览器拦截，导致按钮交互全部失效。</p>
               <p>请先启动本地服务，再访问：<a href="${fallbackUrl}" style="color:#66e8ff;">${fallbackUrl}</a></p>
               <pre style="background:#0f1740; color:#b7f6ff; padding:12px 14px; border-radius:12px; overflow:auto;">node scripts/serve-localhost.mjs --port 4173</pre>
@@ -39,7 +39,7 @@
     <div class="aurora-background"></div>
     <main class="demo-layout">
       <header class="hero">
-        <h1>Aurora Flow UI · X4</h1>
+        <h1>Aurora Flow UI · X4.5</h1>
         <p>流畅 · 抽象 · 极光灵感 · 轻依赖（原生 HTML/CSS/JS）</p>
         <button id="play-demo" class="demo-trigger">播放交互动画演示</button>
       </header>
@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="control-row">
-                  <label>风格过滤器（X4）</label>
+                  <label>风格过滤器（X4.5）</label>
                   <div class="chip-filter aeroglass-enabled" data-component="chip-filter" data-aeroglass="true">
                     <button class="chip active">柔光</button>
                     <button class="chip">锐光</button>
@@ -112,7 +112,7 @@
                 </div>
 
                 <div class="control-row">
-                  <label>信息折叠面板（X4）</label>
+                  <label>信息折叠面板（X4.5）</label>
                   <div class="accordion" data-component="accordion">
                     <div class="accordion-item open">
                       <button class="accordion-trigger">动效参数</button>
@@ -137,7 +137,7 @@
 
 
                 <div class="control-row">
-                  <label>Aeroglass 设计语言（X4）</label>
+                  <label>Aeroglass 设计语言（X4.5）</label>
                   <div class="chip-filter" data-component="aeroglass-toggle">
                     <button class="chip active" data-aero-toggle="window">窗口</button>
                     <button class="chip active" data-aero-toggle="menu">菜单栏</button>

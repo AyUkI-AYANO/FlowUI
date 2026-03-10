@@ -2,17 +2,20 @@
   --tab-active-color: rgba(102, 232, 255, 0.26);
   --tab-active-color-alt: rgba(158, 140, 255, 0.22);
   --tab-active-glow: rgba(158, 140, 255, 0.25);
+  --tab-radius: 18px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  padding: 4px;
+  border-radius: calc(var(--tab-radius) + 4px);
 }
 
 .module-tab {
-  border: 1px solid rgba(158, 140, 255, 0.36);
-  background: rgba(11, 20, 38, 0.76);
+  border: 1px solid rgba(165, 181, 245, 0.38);
+  background: linear-gradient(145deg, rgba(14, 27, 50, 0.8), rgba(10, 19, 35, 0.72));
   color: var(--text-subtle);
-  border-radius: 999px;
-  padding: 8px 14px;
+  border-radius: var(--tab-radius);
+  padding: 9px 16px;
   cursor: pointer;
   transition: transform 250ms var(--ease-fluid), color 250ms var(--ease-fluid), border-color 250ms var(--ease-fluid), box-shadow 250ms var(--ease-fluid), background 250ms var(--ease-fluid);
 }
@@ -21,7 +24,16 @@
 .module-tab.active {
   color: #fff;
   transform: translateY(-1px);
-  border-color: color-mix(in oklab, var(--tab-active-color), #9e8cff 45%);
-  background: linear-gradient(120deg, var(--tab-active-color), var(--tab-active-color-alt));
-  box-shadow: 0 8px 20px var(--tab-active-glow);
+  border-color: color-mix(in oklab, var(--tab-active-color), #caf1ff 38%);
+  background: linear-gradient(120deg, color-mix(in oklab, var(--tab-active-color), rgba(255, 255, 255, 0.08) 32%), var(--tab-active-color-alt));
+  box-shadow: 0 8px 20px var(--tab-active-glow), inset 0 1px 0 rgba(255, 255, 255, 0.36);
+}
+
+.module-tabs.aeroglass-enabled .module-tab {
+  background:
+    linear-gradient(155deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.02) 42%),
+    linear-gradient(145deg, rgba(20, 42, 74, 0.4), rgba(11, 25, 50, 0.24));
+  border-color: rgba(204, 232, 255, 0.42);
+  backdrop-filter: blur(14px) saturate(136%);
+  -webkit-backdrop-filter: blur(14px) saturate(136%);
 }
