@@ -7,6 +7,11 @@
   padding: 18px;
 }
 
+.ui-window.aeroglass-enabled {
+  background: linear-gradient(145deg, rgba(12, 20, 40, 0.46), rgba(8, 14, 28, 0.45));
+  border-color: rgba(204, 235, 255, 0.4);
+}
+
 .window-header {
   display: flex;
   align-items: center;

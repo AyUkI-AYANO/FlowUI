@@ -1,4 +1,7 @@
 .module-tabs {
+  --tab-active-color: rgba(102, 232, 255, 0.26);
+  --tab-active-color-alt: rgba(158, 140, 255, 0.22);
+  --tab-active-glow: rgba(158, 140, 255, 0.25);
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
@@ -11,13 +14,14 @@
   border-radius: 999px;
   padding: 8px 14px;
   cursor: pointer;
-  transition: transform 250ms var(--ease-fluid), color 250ms var(--ease-fluid), border-color 250ms var(--ease-fluid), box-shadow 250ms var(--ease-fluid);
+  transition: transform 250ms var(--ease-fluid), color 250ms var(--ease-fluid), border-color 250ms var(--ease-fluid), box-shadow 250ms var(--ease-fluid), background 250ms var(--ease-fluid);
 }
 
 .module-tab:hover,
 .module-tab.active {
   color: #fff;
   transform: translateY(-1px);
-  border-color: rgba(102, 232, 255, 0.56);
-  box-shadow: 0 8px 20px rgba(158, 140, 255, 0.25);
+  border-color: color-mix(in oklab, var(--tab-active-color), #9e8cff 45%);
+  background: linear-gradient(120deg, var(--tab-active-color), var(--tab-active-color-alt));
+  box-shadow: 0 8px 20px var(--tab-active-glow);
 }

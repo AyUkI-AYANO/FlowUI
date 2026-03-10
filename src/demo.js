@@ -20,12 +20,37 @@ const chipFilterEl = document.querySelector('[data-component="chip-filter"]');
 const accordionEl = document.querySelector('[data-component="accordion"]');
 const actionToolbarEl = document.querySelector('[data-component="action-toolbar"]');
 const moduleTabsEl = document.querySelector('[data-component="module-tabs"]');
+const aeroToggleEl = document.querySelector('[data-component="aeroglass-toggle"]');
 const interactionLogEl = document.querySelector('#interaction-log');
 const playDemoBtn = document.querySelector('#play-demo');
 
 const setLog = (text) => {
   if (interactionLogEl) interactionLogEl.textContent = text;
 };
+
+function initAeroglassToggle(toggleEl, setLogMessage) {
+  if (!toggleEl) return;
+
+  const toggleMap = {
+    window: [windowEl],
+    menu: [horizontalMenuEl, verticalMenuEl],
+    options: [selectionPanelEl, chipFilterEl, moduleTabsEl]
+  };
+
+  const buttons = Array.from(toggleEl.querySelectorAll('[data-aero-toggle]'));
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      button.classList.toggle('active');
+      const key = button.dataset.aeroToggle;
+      const enabled = button.classList.contains('active');
+      toggleMap[key]?.forEach((el) => {
+        if (el) el.classList.toggle('aeroglass-enabled', enabled);
+      });
+      const targetLabel = button.textContent?.trim() || '模块';
+      setLogMessage?.(`Aeroglass：${targetLabel}${enabled ? '已开启' : '已关闭'}`);
+    });
+  });
+}
 
 if (windowEl) initWindow(windowEl);
 if (horizontalMenuEl) initHorizontalMenu(horizontalMenuEl);
@@ -37,6 +62,7 @@ if (chipFilterEl) initChipFilter(chipFilterEl);
 if (accordionEl) initAccordion(accordionEl);
 if (actionToolbarEl) initActionToolbar(actionToolbarEl, setLog);
 if (moduleTabsEl) initModuleTabs(moduleTabsEl, setLog);
+if (aeroToggleEl) initAeroglassToggle(aeroToggleEl, setLog);
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -78,6 +104,7 @@ async function playInteractionDemo() {
   const accordionTriggers = accordionEl ? Array.from(accordionEl.querySelectorAll('.accordion-trigger')) : [];
   const actionButtons = actionToolbarEl ? Array.from(actionToolbarEl.querySelectorAll('.action-btn')) : [];
   const moduleButtons = moduleTabsEl ? Array.from(moduleTabsEl.querySelectorAll('.module-tab')) : [];
+  const aeroglassButtons = aeroToggleEl ? Array.from(aeroToggleEl.querySelectorAll('[data-aero-toggle]')) : [];
 
   for (const item of topItems) await clickAndWait(item, 320);
   for (const item of sideItems) await clickAndWait(item);
@@ -88,6 +115,8 @@ async function playInteractionDemo() {
   for (const item of accordionTriggers.slice().reverse()) await clickAndWait(item, 380);
   for (const item of actionButtons) await clickAndWait(item);
   for (const item of moduleButtons) await clickAndWait(item);
+  for (const item of aeroglassButtons) await clickAndWait(item, 300);
+  for (const item of aeroglassButtons.slice().reverse()) await clickAndWait(item, 300);
 
   if (sliderEl) {
     await animateSlider(sliderEl, 88);

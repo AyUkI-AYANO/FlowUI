@@ -12,6 +12,12 @@
   --aurora-mint: #76ffc8;
   --aurora-pink: #ff91d8;
 
+  --aeroglass-surface: rgba(176, 220, 255, 0.16);
+  --aeroglass-surface-strong: rgba(166, 206, 255, 0.24);
+  --aeroglass-line: rgba(225, 244, 255, 0.45);
+  --aeroglass-specular: rgba(255, 255, 255, 0.42);
+  --aeroglass-shadow: rgba(66, 122, 175, 0.28);
+
   --radius-lg: 20px;
   --radius-md: 14px;
   --radius-sm: 10px;

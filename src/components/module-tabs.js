@@ -1,4 +1,9 @@
 export function initModuleTabs(tabsEl, onChange) {
+  const { activeColor, activeColorAlt, activeGlow } = tabsEl.dataset;
+  if (activeColor) tabsEl.style.setProperty('--tab-active-color', activeColor);
+  if (activeColorAlt) tabsEl.style.setProperty('--tab-active-color-alt', activeColorAlt);
+  if (activeGlow) tabsEl.style.setProperty('--tab-active-glow', activeGlow);
+
   const tabs = Array.from(tabsEl.querySelectorAll('.module-tab'));
 
   const setActive = (tab) => {

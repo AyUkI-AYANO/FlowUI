@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aurora Flow UI Demo X3</title>
+    <title>Aurora Flow UI Demo X4</title>
     <script>
       if (location.protocol === 'file:') {
         const fallbackUrl = 'http://localhost:4173';
         document.addEventListener('DOMContentLoaded', () => {
           document.body.innerHTML = `
             <main style="font-family: Inter, 'Noto Sans SC', sans-serif; margin: 10vh auto; max-width: 720px; line-height: 1.7; color: #e9f0ff; background: #070c20; border: 1px solid rgba(102, 232, 255, 0.3); border-radius: 18px; padding: 28px 30px; box-shadow: 0 18px 48px rgba(0, 0, 0, 0.5);">
-              <h1 style="margin-top:0;">Aurora Flow UI · X3</h1>
+              <h1 style="margin-top:0;">Aurora Flow UI · X4</h1>
               <p>当前以 <code>file://</code> 方式打开，ES Module 脚本会被浏览器拦截，导致按钮交互全部失效。</p>
               <p>请先启动本地服务，再访问：<a href="${fallbackUrl}" style="color:#66e8ff;">${fallbackUrl}</a></p>
               <pre style="background:#0f1740; color:#b7f6ff; padding:12px 14px; border-radius:12px; overflow:auto;">node scripts/serve-localhost.mjs --port 4173</pre>
@@ -39,12 +39,12 @@
     <div class="aurora-background"></div>
     <main class="demo-layout">
       <header class="hero">
-        <h1>Aurora Flow UI · X3</h1>
+        <h1>Aurora Flow UI · X4</h1>
         <p>流畅 · 抽象 · 极光灵感 · 轻依赖（原生 HTML/CSS/JS）</p>
         <button id="play-demo" class="demo-trigger">播放交互动画演示</button>
       </header>
 
-      <section class="ui-window" data-component="window">
+      <section class="ui-window aeroglass-enabled" data-component="window" data-aeroglass="true">
         <div class="window-header">
           <h2>主窗口 · 控制台</h2>
           <div class="window-controls">
@@ -54,7 +54,7 @@
           </div>
         </div>
 
-        <nav class="horizontal-menu" data-component="horizontal-menu">
+        <nav class="horizontal-menu aeroglass-enabled" data-component="horizontal-menu" data-active-color="rgba(106, 238, 255, 0.85)" data-active-color-alt="rgba(164, 144, 255, 0.9)" data-active-glow="rgba(108, 196, 255, 0.4)">
           <button class="menu-item active" data-view="dashboard">总览</button>
           <button class="menu-item" data-view="motion">动态</button>
           <button class="menu-item" data-view="palette">配色</button>
@@ -62,7 +62,7 @@
         </nav>
 
         <div class="window-content">
-          <aside class="vertical-menu" data-component="vertical-menu">
+          <aside class="vertical-menu aeroglass-enabled" data-component="vertical-menu" data-active-color="rgba(124, 246, 198, 0.22)" data-active-color-alt="rgba(102, 232, 255, 0.16)" data-active-glow="rgba(118, 255, 200, 0.24)">
             <button class="v-item active">工作区</button>
             <button class="v-item">素材库</button>
             <button class="v-item">节点</button>
@@ -74,7 +74,7 @@
             <div class="partition-window" data-component="partition-window">
               <div class="partition left-pane">
                 <h3>选择界面</h3>
-                <div class="selection-panel" data-component="selection-panel">
+                <div class="selection-panel aeroglass-enabled" data-component="selection-panel" data-aeroglass="true">
                   <button class="select-card selected">Aurora Mist</button>
                   <button class="select-card">Solar Veil</button>
                   <button class="select-card">Frost Pulse</button>
@@ -102,8 +102,8 @@
                 </div>
 
                 <div class="control-row">
-                  <label>风格过滤器（新）</label>
-                  <div class="chip-filter" data-component="chip-filter">
+                  <label>风格过滤器（X4）</label>
+                  <div class="chip-filter aeroglass-enabled" data-component="chip-filter" data-aeroglass="true">
                     <button class="chip active">柔光</button>
                     <button class="chip">锐光</button>
                     <button class="chip">霓虹</button>
@@ -112,7 +112,7 @@
                 </div>
 
                 <div class="control-row">
-                  <label>信息折叠面板（新）</label>
+                  <label>信息折叠面板（X4）</label>
                   <div class="accordion" data-component="accordion">
                     <div class="accordion-item open">
                       <button class="accordion-trigger">动效参数</button>
@@ -135,9 +135,18 @@
                   </div>
                 </div>
 
+
+                <div class="control-row">
+                  <label>Aeroglass 设计语言（X4）</label>
+                  <div class="chip-filter" data-component="aeroglass-toggle">
+                    <button class="chip active" data-aero-toggle="window">窗口</button>
+                    <button class="chip active" data-aero-toggle="menu">菜单栏</button>
+                    <button class="chip active" data-aero-toggle="options">选项面板</button>
+                  </div>
+                </div>
                 <div class="control-row">
                   <label>模块切换器（X2）</label>
-                  <div class="module-tabs" data-component="module-tabs">
+                  <div class="module-tabs aeroglass-enabled" data-component="module-tabs" data-active-color="rgba(106, 228, 255, 0.28)" data-active-color-alt="rgba(158, 140, 255, 0.3)" data-active-glow="rgba(112, 210, 255, 0.25)">
                     <button class="module-tab active">纹理工坊</button>
                     <button class="module-tab">粒子实验室</button>
                     <button class="module-tab">灯光映射</button>
