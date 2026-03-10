@@ -1,4 +1,7 @@
 .vertical-menu {
+  --menu-active-color: rgba(118, 255, 200, 0.2);
+  --menu-active-color-alt: rgba(102, 232, 255, 0.16);
+  --menu-active-glow: rgba(102, 232, 255, 0.2);
   background: var(--glass);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
@@ -22,6 +25,7 @@
 .v-item.active,
 .v-item:hover {
   color: #fff;
-  border-color: rgba(118, 255, 200, 0.35);
-  background: linear-gradient(120deg, rgba(118, 255, 200, 0.18), rgba(102, 232, 255, 0.14));
+  border-color: color-mix(in oklab, var(--menu-active-color), #ffffff 25%);
+  background: linear-gradient(120deg, var(--menu-active-color), var(--menu-active-color-alt));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 8px 20px var(--menu-active-glow);
 }

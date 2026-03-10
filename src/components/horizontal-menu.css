@@ -1,5 +1,8 @@
 .horizontal-menu {
   --menu-padding: 4px;
+  --menu-active-color: rgba(102, 232, 255, 0.82);
+  --menu-active-color-alt: rgba(158, 140, 255, 0.82);
+  --menu-active-glow: rgba(91, 183, 255, 0.36);
   margin-top: 14px;
   background: rgba(8, 14, 29, 0.6);
   border: 1px solid rgba(158, 140, 255, 0.28);
@@ -36,8 +39,8 @@
   left: 0;
   height: calc(100% - (var(--menu-padding) * 2));
   border-radius: 999px;
-  background: linear-gradient(120deg, rgba(102, 232, 255, 0.82), rgba(158, 140, 255, 0.82));
-  box-shadow: 0 8px 25px rgba(91, 183, 255, 0.36);
+  background: linear-gradient(120deg, var(--menu-active-color), var(--menu-active-color-alt));
+  box-shadow: 0 8px 25px var(--menu-active-glow);
   z-index: 1;
   transition: left 480ms var(--ease-fluid), width 480ms var(--ease-fluid);
 }
