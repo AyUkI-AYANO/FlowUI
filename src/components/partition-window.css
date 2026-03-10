@@ -34,6 +34,16 @@
   font-weight: 600;
 }
 
+#interaction-log {
+  display: block;
+  color: var(--aurora-mint);
+  background: rgba(118, 255, 200, 0.08);
+  border: 1px solid rgba(118, 255, 200, 0.24);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 0.9rem;
+}
+
 @media (max-width: 980px) {
   .window-content {
     grid-template-columns: 1fr;

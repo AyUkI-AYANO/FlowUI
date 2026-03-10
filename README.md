@@ -12,14 +12,16 @@
 - 垂直菜单栏：`src/components/vertical-menu.css` + `src/components/vertical-menu.js`
 - 选择界面：`src/components/selection-panel.css` + `src/components/selection-panel.js`
 - 内部分区窗口：`src/components/partition-window.css`
-- 风格过滤器（X1 新增）：`src/components/chip-filter.css` + `src/components/chip-filter.js`
-- 信息折叠面板（X1 新增）：`src/components/accordion.css` + `src/components/accordion.js`
+- 风格过滤器：`src/components/chip-filter.css` + `src/components/chip-filter.js`
+- 信息折叠面板：`src/components/accordion.css` + `src/components/accordion.js`
+- 动作工具条（X2 新增）：`src/components/action-toolbar.css` + `src/components/action-toolbar.js`
+- 模块切换器（X2 新增）：`src/components/module-tabs.css` + `src/components/module-tabs.js`
 
 ## 演示
 
 - 入口文件：`index.html`
 - 演示逻辑：`src/demo.js`
-- X1 新增「播放交互动画演示」按钮，可顺序展示菜单切换、选项选择、折叠面板开合、滑条数值变化等动态交互效果。
+- X2 演示页保证所有按钮均可点击，支持菜单指示器动效切换、全组件自动演示与交互反馈日志。
 
 ## Changelog
 
@@ -34,5 +36,11 @@
 - 新增两个符合设计语言的组件：风格过滤器（Chip Filter）与信息折叠面板（Accordion）。
 - 演示页加入新组件，丰富场景并保持统一视觉语言（玻璃拟态、极光高光、圆角体系）。
 - 演示脚本新增「交互动画播放」流程，可自动演示菜单切换、选项切换、折叠开合、滑条动态变化。
+
+### X2
+
+- 新增动作工具条与模块切换器两个实操模块，所有按钮均支持可视化点击反馈。
+- 演示脚本升级为全量触发流程：顶部菜单、侧栏、卡片、开关、过滤器、折叠面板、新模块按钮、滑条都会被自动演示。
+- 新增交互反馈日志，手动/自动点击都可看到当前操作状态，便于验证按钮可操作性。
 
 本项目零外部 UI 库依赖，可直接双击 `index.html` 或使用任意静态服务器运行。

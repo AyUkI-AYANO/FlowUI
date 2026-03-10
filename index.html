@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aurora Flow UI Demo</title>
+    <title>Aurora Flow UI Demo X2</title>
     <link rel="stylesheet" href="./src/styles/tokens.css" />
     <link rel="stylesheet" href="./src/styles/base.css" />
     <link rel="stylesheet" href="./src/components/window.css" />
@@ -16,12 +16,14 @@
     <link rel="stylesheet" href="./src/components/partition-window.css" />
     <link rel="stylesheet" href="./src/components/chip-filter.css" />
     <link rel="stylesheet" href="./src/components/accordion.css" />
+    <link rel="stylesheet" href="./src/components/action-toolbar.css" />
+    <link rel="stylesheet" href="./src/components/module-tabs.css" />
   </head>
   <body>
     <div class="aurora-background"></div>
     <main class="demo-layout">
       <header class="hero">
-        <h1>Aurora Flow UI · X1</h1>
+        <h1>Aurora Flow UI · X2</h1>
         <p>流畅 · 抽象 · 极光灵感 · 轻依赖（原生 HTML/CSS/JS）</p>
         <button id="play-demo" class="demo-trigger">播放交互动画演示</button>
       </header>
@@ -101,6 +103,31 @@
                       <div class="accordion-panel">主色：Cyan/Violet · 辅助：Mint/Pink · 对比度策略：高亮焦点 + 深色底。</div>
                     </div>
                   </div>
+                </div>
+
+                <div class="control-row">
+                  <label>动作工具条（X2）</label>
+                  <div class="action-toolbar" data-component="action-toolbar">
+                    <button class="action-btn active">预览</button>
+                    <button class="action-btn">冻结</button>
+                    <button class="action-btn">克隆</button>
+                    <button class="action-btn">发布</button>
+                  </div>
+                </div>
+
+                <div class="control-row">
+                  <label>模块切换器（X2）</label>
+                  <div class="module-tabs" data-component="module-tabs">
+                    <button class="module-tab active">纹理工坊</button>
+                    <button class="module-tab">粒子实验室</button>
+                    <button class="module-tab">灯光映射</button>
+                    <button class="module-tab">渲染队列</button>
+                  </div>
+                </div>
+
+                <div class="control-row">
+                  <label>交互反馈</label>
+                  <output id="interaction-log">已就绪：请点击任意按钮进行交互。</output>
                 </div>
               </div>
             </div>
