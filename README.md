@@ -45,14 +45,16 @@
 
 本项目零外部 UI 库依赖，推荐使用 localhost 服务运行（示例：`node scripts/serve-localhost.mjs --port 4173` 后访问 `http://localhost:4173`）。
 
+### X2.5
+
+- 演示入口切换为 **localhost 本地服务模式**，避免 `file://` 场景下 ES Module 被浏览器策略拦截导致按钮失效。
+- 新增 `scripts/serve-localhost.mjs` 轻量静态服务脚本，启动后可直接访问 `http://localhost:4173`。
+- `index.html` 在 `file://` 打开时会显示明确提示，指导使用 localhost 启动方式，确保演示页交互完全可用。
+
 ### X3
 
 - 修复横向菜单栏滑块在首尾位置与边框间距不一致的问题，改为基于真实按钮偏移量对齐，左右边距表现统一。
 - 主窗口标题栏新增最小化按键与窗口缩放按键模块，保留关闭按键并统一为窗口控制组。
 - 演示标题升级到 X3，并更新组件清单以反映新的窗口控制模块。
 
-### X2.5
 
-- 演示入口切换为 **localhost 本地服务模式**，避免 `file://` 场景下 ES Module 被浏览器策略拦截导致按钮失效。
-- 新增 `scripts/serve-localhost.mjs` 轻量静态服务脚本，启动后可直接访问 `http://localhost:4173`。
-- `index.html` 在 `file://` 打开时会显示明确提示，指导使用 localhost 启动方式，确保演示页交互完全可用。
