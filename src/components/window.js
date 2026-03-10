@@ -1,5 +1,8 @@
 export function initWindow(windowEl) {
-  const closeButton = windowEl.querySelector('.close-button');
+  const closeButton = windowEl.querySelector('[data-component="close-button"]');
+  const minimizeButton = windowEl.querySelector('[data-component="minimize-button"]');
+  const resizeButton = windowEl.querySelector('[data-component="resize-button"]');
+
   closeButton?.addEventListener('click', () => {
     windowEl.animate(
       [
@@ -12,5 +15,13 @@ export function initWindow(windowEl) {
     setTimeout(() => {
       windowEl.style.display = 'none';
     }, 420);
+  });
+
+  minimizeButton?.addEventListener('click', () => {
+    windowEl.classList.toggle('is-minimized');
+  });
+
+  resizeButton?.addEventListener('click', () => {
+    windowEl.classList.toggle('is-expanded');
   });
 }

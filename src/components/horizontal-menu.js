@@ -2,9 +2,11 @@ export function initHorizontalMenu(menuEl) {
   const items = Array.from(menuEl.querySelectorAll('.menu-item'));
   const indicator = menuEl.querySelector('.menu-indicator');
 
+  if (!indicator || !items.length) return;
+
   const syncIndicator = (activeEl) => {
     indicator.style.width = `${activeEl.offsetWidth}px`;
-    indicator.style.transform = `translateX(${activeEl.offsetLeft}px)`;
+    indicator.style.left = `${activeEl.offsetLeft}px`;
   };
 
   items.forEach((item) => {
@@ -15,9 +17,7 @@ export function initHorizontalMenu(menuEl) {
     });
   });
 
-  if (items[0]) {
-    syncIndicator(menuEl.querySelector('.menu-item.active') || items[0]);
-  }
+  syncIndicator(menuEl.querySelector('.menu-item.active') || items[0]);
 
   window.addEventListener('resize', () => {
     const active = menuEl.querySelector('.menu-item.active');

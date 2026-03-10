@@ -1,0 +1,97 @@
+.window-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.window-control-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: rgba(20, 32, 62, 0.65);
+  cursor: pointer;
+  position: relative;
+  transition: transform 260ms var(--ease-fluid), box-shadow 260ms var(--ease-fluid), opacity 200ms ease;
+}
+
+.window-control-btn:hover {
+  transform: scale(1.08);
+}
+
+.window-control-btn::before,
+.window-control-btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.window-control-btn.minimize {
+  border-color: rgba(255, 216, 150, 0.5);
+  background: radial-gradient(circle at 35% 35%, rgba(255, 216, 150, 0.34), rgba(76, 43, 8, 0.72));
+}
+
+.window-control-btn.minimize::before {
+  width: 12px;
+  height: 2px;
+  border-radius: 2px;
+  background: #fff3d6;
+  transform: translate(-50%, 3px);
+}
+
+.window-control-btn.resize {
+  border-color: rgba(102, 232, 255, 0.5);
+  background: radial-gradient(circle at 35% 35%, rgba(102, 232, 255, 0.32), rgba(11, 45, 83, 0.72));
+}
+
+.window-control-btn.resize::before,
+.window-control-btn.resize::after {
+  width: 9px;
+  height: 9px;
+  border: 2px solid #d8fbff;
+  border-radius: 2px;
+}
+
+.window-control-btn.resize::before {
+  transform: translate(-62%, -54%);
+}
+
+.window-control-btn.resize::after {
+  opacity: 0.7;
+  transform: translate(-38%, -28%);
+}
+
+.window-control-btn.close {
+  border-color: rgba(255, 145, 216, 0.5);
+  background: radial-gradient(circle at 35% 35%, rgba(255, 145, 216, 0.34), rgba(80, 16, 56, 0.7));
+}
+
+.window-control-btn.close::before,
+.window-control-btn.close::after {
+  width: 14px;
+  height: 2px;
+  border-radius: 99px;
+  background: #ffe6f6;
+}
+
+.window-control-btn.close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.window-control-btn.close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.ui-window.is-minimized .window-content,
+.ui-window.is-minimized .horizontal-menu {
+  display: none;
+}
+
+.ui-window.is-minimized {
+  padding-bottom: 12px;
+}
+
+.ui-window.is-expanded {
+  width: min(96vw, 1320px);
+}
