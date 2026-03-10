@@ -1,34 +1,41 @@
 .selection-panel {
+  --select-radius: 16px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 10px;
+  padding: 6px;
+  border-radius: calc(var(--select-radius) + 6px);
 }
 
 .select-card {
-  border: 1px solid rgba(102, 232, 255, 0.3);
-  background: linear-gradient(160deg, rgba(12, 24, 42, 0.78), rgba(12, 17, 31, 0.6));
+  border: 1px solid rgba(145, 199, 255, 0.34);
+  background: linear-gradient(160deg, rgba(14, 30, 54, 0.82), rgba(12, 20, 40, 0.68));
   color: var(--text-main);
-  border-radius: var(--radius-sm);
+  border-radius: var(--select-radius);
   padding: 12px;
   cursor: pointer;
-  transition: transform 280ms var(--ease-fluid), border-color 280ms var(--ease-fluid), box-shadow 280ms var(--ease-fluid);
+  transition: transform 280ms var(--ease-fluid), border-color 280ms var(--ease-fluid), box-shadow 280ms var(--ease-fluid), background 280ms var(--ease-fluid);
 }
 
 .select-card:hover,
 .select-card.selected {
   transform: translateY(-2px) scale(1.01);
-  border-color: rgba(118, 255, 200, 0.55);
-  box-shadow: 0 8px 24px rgba(102, 232, 255, 0.24);
+  border-color: rgba(160, 242, 255, 0.62);
+  background: linear-gradient(145deg, rgba(42, 74, 120, 0.82), rgba(28, 42, 82, 0.72));
+  box-shadow: 0 8px 24px rgba(102, 204, 255, 0.24);
 }
 
 .selection-panel.aeroglass-enabled .select-card {
-  background: linear-gradient(145deg, rgba(22, 45, 78, 0.34), rgba(12, 28, 56, 0.23));
-  border-color: rgba(200, 234, 255, 0.34);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background:
+    linear-gradient(155deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.03) 44%),
+    linear-gradient(145deg, rgba(22, 45, 78, 0.38), rgba(12, 28, 56, 0.24));
+  border-color: rgba(206, 237, 255, 0.44);
+  backdrop-filter: blur(15px) saturate(136%);
+  -webkit-backdrop-filter: blur(15px) saturate(136%);
 }
 
 .selection-panel.aeroglass-enabled .select-card:hover,
 .selection-panel.aeroglass-enabled .select-card.selected {
-  box-shadow: 0 10px 26px rgba(102, 232, 255, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  border-color: rgba(180, 238, 255, 0.86);
+  box-shadow: 0 10px 26px rgba(102, 224, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
