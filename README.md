@@ -43,4 +43,10 @@
 - 演示脚本升级为全量触发流程：顶部菜单、侧栏、卡片、开关、过滤器、折叠面板、新模块按钮、滑条都会被自动演示。
 - 新增交互反馈日志，手动/自动点击都可看到当前操作状态，便于验证按钮可操作性。
 
-本项目零外部 UI 库依赖，可直接双击 `index.html` 或使用任意静态服务器运行。
+本项目零外部 UI 库依赖，推荐使用 localhost 服务运行（示例：`node scripts/serve-localhost.mjs --port 4173` 后访问 `http://localhost:4173`）。
+
+### X2.5
+
+- 演示入口切换为 **localhost 本地服务模式**，避免 `file://` 场景下 ES Module 被浏览器策略拦截导致按钮失效。
+- 新增 `scripts/serve-localhost.mjs` 轻量静态服务脚本，启动后可直接访问 `http://localhost:4173`。
+- `index.html` 在 `file://` 打开时会显示明确提示，指导使用 localhost 启动方式，确保演示页交互完全可用。
